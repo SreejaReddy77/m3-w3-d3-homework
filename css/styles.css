@@ -1,0 +1,141 @@
+nav {
+  padding: 17px 5.2%;
+}
+nav ul {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+nav li,
+nav a {
+  color: rgb(255, 255, 255);
+  font-size: 16px;
+  text-decoration: none;
+}
+nav a:hover,
+nav a:focus-visible {
+  text-decoration: underline;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: rgb(255, 255, 255);
+}
+
+body {
+  width: min(1408px, 100% - 48px);
+  margin: 47px auto 55px;
+  background-color: rgb(218, 170, 14);
+  color: rgb(49, 49, 48);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+main {
+  display: flex;
+  height: 573px;
+  margin: 0 14px;
+  padding: 20px;
+  background-color: rgb(255, 255, 255);
+}
+main #intro-text,
+main #intro-image {
+  min-width: 0;
+  height: 100%;
+}
+main #intro-text {
+  display: flex;
+  flex: 0 0 41%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 22px;
+  background-color: rgb(212, 213, 216);
+  text-align: center;
+}
+main #intro-text span {
+  margin-bottom: 36px;
+  color: rgb(49, 49, 48);
+  font-family: "Sacramento", cursive;
+  font-size: 32px;
+}
+main #intro-text h3 {
+  margin: 0 0 28px;
+  font-size: 32px;
+  line-height: 1.15;
+}
+main #intro-text p {
+  margin: 0 0 40px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+main #intro-text .submit-buttton {
+  border: 0;
+  padding: 12px 10px;
+  background-color: rgb(218, 170, 14);
+  color: rgb(255, 255, 255);
+  font: inherit;
+  cursor: pointer;
+}
+main #intro-text .submit-buttton:hover, main #intro-text .submit-buttton:focus-visible {
+  background-color: rgb(49, 49, 48);
+}
+main #intro-image {
+  flex: 1;
+}
+main #intro-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+footer {
+  padding: 26px 5.2% 16px;
+  color: rgb(49, 49, 48);
+  font-size: 14px;
+}
+
+@media (max-width: 760px) {
+  body {
+    width: calc(100% - 24px);
+    margin: 12px auto;
+  }
+  main {
+    flex-direction: column;
+    height: auto;
+    min-height: 0;
+    padding: 12px;
+  }
+  main #intro-text {
+    flex-basis: auto;
+    height: auto;
+    min-height: 360px;
+    padding: 28px 18px;
+  }
+  main #intro-text span {
+    margin-bottom: 24px;
+  }
+  main #intro-text h3 {
+    font-size: 28px;
+  }
+  main #intro-text p {
+    margin-bottom: 28px;
+  }
+  main #intro-image {
+    height: auto;
+    min-height: 0;
+  }
+  main #intro-image img {
+    height: auto;
+    aspect-ratio: 1.5;
+  }
+  footer {
+    padding: 18px 5.2%;
+  }
+}
