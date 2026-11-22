@@ -1,0 +1,261 @@
+@import 'colors';
+@import 'nav';
+
+@mixin recipe-button {
+    border: 0;
+    padding: 12px 18px;
+    background-color: $gold;
+    color: $white;
+    font: inherit;
+    cursor: pointer;
+
+    &:hover,
+    &:focus-visible {
+        background-color: $charcoal;
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    background-color: $white;
+}
+
+body {
+    width: min(1408px, calc(100% - 48px));
+    margin: 47px auto 55px;
+    background-color: $gold;
+    color: $charcoal;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.register-link {
+    color: $white;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+main {
+    display: flex;
+    height: 573px;
+    margin: 0 14px;
+    padding: 20px;
+    background-color: $white;
+
+    #intro-text,
+    #intro-image {
+        min-width: 0;
+        height: 100%;
+    }
+
+    #intro-text {
+        display: flex;
+        flex: 0 0 41%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 32px 22px;
+        background-color: $panel-gray;
+        text-align: center;
+
+        span {
+            margin-bottom: 36px;
+            color: $charcoal;
+            font-family: 'Sacramento', cursive;
+            font-size: 32px;
+        }
+
+        h3 {
+            margin: 0 0 28px;
+            font-size: 32px;
+            line-height: 1.15;
+        }
+
+        p {
+            margin: 0 0 40px;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .submit-buttton {
+            @include recipe-button;
+        }
+    }
+
+    #intro-image {
+        flex: 1;
+
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+.registration-main {
+    height: 520px;
+}
+
+.brand-panel {
+    display: flex;
+    flex: 0 0 38%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: $panel-gray;
+    text-align: center;
+
+    span {
+        margin-bottom: 28px;
+        font-family: 'Sacramento', cursive;
+        font-size: 32px;
+    }
+
+    p {
+        margin: 0;
+        font-weight: bold;
+    }
+}
+
+.registration-panel,
+.thankyou-panel {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px 18%;
+
+    h1 {
+        margin: 0 0 28px;
+        text-align: center;
+    }
+}
+
+.registration-form {
+    display: flex;
+    flex-direction: column;
+
+    label {
+        margin-bottom: 5px;
+    }
+
+    input {
+        height: 38px;
+        margin-bottom: 18px;
+    }
+
+    button {
+        @include recipe-button;
+        width: 100%;
+    }
+}
+
+.my-errors {
+    margin: 0 0 20px;
+    padding: 0;
+    color: #d00;
+    list-style: none;
+
+    li::before {
+        content: '! Error: ';
+        font-weight: bold;
+    }
+}
+
+.listing-main {
+    display: block;
+    width: 100%;
+    height: auto;
+    min-height: 520px;
+    padding: 50px;
+}
+
+.listing-table {
+    width: 100%;
+    border-collapse: collapse;
+
+    th,
+    td {
+        border: 1px solid #666;
+        padding: 12px;
+    }
+
+    th {
+        background: #111;
+        color: $white;
+    }
+}
+
+footer {
+    padding: 26px 5.2% 16px;
+    color: $charcoal;
+    font-size: 14px;
+}
+
+@media (max-width: 760px) {
+    body {
+        width: calc(100% - 24px);
+        margin: 12px auto;
+    }
+
+    main {
+        flex-direction: column;
+        height: auto;
+        min-height: 0;
+        padding: 12px;
+
+        #intro-text {
+            flex-basis: auto;
+            height: auto;
+            min-height: 360px;
+            padding: 28px 18px;
+
+            span {
+                margin-bottom: 24px;
+            }
+
+            h3 {
+                font-size: 28px;
+            }
+
+            p {
+                margin-bottom: 28px;
+            }
+        }
+
+        #intro-image {
+            height: auto;
+            min-height: 0;
+
+            img {
+                height: auto;
+                aspect-ratio: 1.5;
+            }
+        }
+    }
+
+    .brand-panel {
+        min-height: 280px;
+    }
+
+    .registration-panel,
+    .thankyou-panel {
+        min-height: 380px;
+        padding: 40px 8%;
+    }
+
+    footer {
+        padding: 18px 5.2%;
+    }
+}
